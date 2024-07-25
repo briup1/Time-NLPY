@@ -32,7 +32,7 @@ class TimeNormalizer:
             with open(fpath, 'rb') as f:
                 pattern = pickle.load(f)
         except:
-            with open(os.path.dirname(__file__) + '/resource/regex.txt', 'r', encoding='utf-8') as f:
+            with open(os.path.dirname(__file__) + '/resource/regex_saas.txt', 'r', encoding='utf-8') as f:
                 content = f.read()
             p = re.compile(str(content))
             with open(fpath, 'wb') as f:

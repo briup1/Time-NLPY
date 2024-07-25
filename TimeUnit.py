@@ -160,12 +160,12 @@ class TimeUnit:
         月-日 兼容模糊写法：该方法识别时间表达式单元的月、日字段
         :return:
         """
-        rule = "((10)|(11)|(12)|([1-9]))(月|\\.|\\-)([0-3][0-9]|[1-9])"
+        rule = "((10)|(11)|(12)|([1-9]))(月|\\.|\\-|\\/)([0-3][0-9]|[1-9])"
         pattern = re.compile(rule)
         match = pattern.search(self.exp_time)
         if match is not None:
             matchStr = match.group()
-            p = re.compile("(月|\\.|\\-)")
+            p = re.compile("(月|\\.|\\-|\\/)")
             m = p.search(matchStr)
             if match is not None:
                 splitIndex = m.start()
